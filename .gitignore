@@ -3,3 +3,4 @@
 .DS_Store
 models/cache*
 models/*.blend1
+texturegen/venv/*
