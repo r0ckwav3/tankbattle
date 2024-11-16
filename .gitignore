@@ -1,3 +1,5 @@
 .godot/
 /android/
 .DS_Store
+models/cache*
+models/*.blend1
