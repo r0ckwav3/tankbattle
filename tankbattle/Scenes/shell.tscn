@@ -1,0 +1,74 @@
+[gd_scene load_steps=15 format=3 uid="uid://dlq51iicpjvtg"]
+
+[ext_resource type="Script" path="res://Scripts/shell.gd" id="1_xf3mg"]
+[ext_resource type="Texture2D" uid="uid://deg80h3e0a0k2" path="res://Assets/shell/0050.png" id="2_5cht0"]
+[ext_resource type="Texture2D" uid="uid://cbgumnyuhdeab" path="res://Assets/shell/0060.png" id="3_q2sdo"]
+[ext_resource type="Texture2D" uid="uid://bhdmpvftye5lu" path="res://Assets/shell/0070.png" id="4_lyjkp"]
+[ext_resource type="Texture2D" uid="uid://bryev0bkixunv" path="res://Assets/shell/0080.png" id="5_5gt55"]
+[ext_resource type="Texture2D" uid="uid://k6yws6tiikxi" path="res://Assets/shell/0090.png" id="6_dl2hk"]
+[ext_resource type="Texture2D" uid="uid://6wgxe3m7t74y" path="res://Assets/shell/0100.png" id="7_6bu2h"]
+[ext_resource type="Texture2D" uid="uid://b48xhhvl5bhap" path="res://Assets/shell/0110.png" id="8_8nnwt"]
+[ext_resource type="Texture2D" uid="uid://7oknoqj5n116" path="res://Assets/shell/0120.png" id="9_43quw"]
+[ext_resource type="Texture2D" uid="uid://t5lugepsjb4i" path="res://Assets/shell/0130.png" id="10_0kak3"]
+[ext_resource type="Texture2D" uid="uid://bdx8ebhvqlrk3" path="res://Assets/shell/0140.png" id="11_laxba"]
+[ext_resource type="Texture2D" uid="uid://diebbxxnilv80" path="res://Assets/shell/0150.png" id="12_cyht6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r440d"]
+size = Vector2(78, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xfuuy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5cht0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q2sdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lyjkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5gt55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dl2hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6bu2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8nnwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_43quw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0kak3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_laxba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_cyht6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Shell" type="CharacterBody2D"]
+script = ExtResource("1_xf3mg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-25, 0)
+shape = SubResource("RectangleShape2D_r440d")
+
+[node name="Life" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="shell" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xfuuy")
+
+[connection signal="timeout" from="Life" to="." method="_on_life_timeout"]

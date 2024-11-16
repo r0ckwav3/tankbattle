@@ -36,7 +36,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xtvh"]
-size = Vector2(44, 34.5)
+size = Vector2(380.606, 293.053)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(-1, 0)
@@ -45,16 +45,23 @@ script = ExtResource("1_lsrh3")
 
 [node name="body" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
-scale = Vector2(1, 1)
+rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_gjio6")
 frame_progress = 0.278094
 
 [node name="turret" type="Sprite2D" parent="."]
-scale = Vector2(1, 1)
+rotation = 3.14159
 texture = ExtResource("3_qgb6k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -0.25)
+position = Vector2(-1.68497, 1.44106)
 shape = SubResource("RectangleShape2D_5xtvh")
+disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ShotCooldown" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="ShotCooldown" to="." method="_on_timer_timeout"]
