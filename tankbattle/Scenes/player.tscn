@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdsc6t2cg2mhj"]
+[gd_scene load_steps=11 format=3 uid="uid://bce6exe1j4ann"]
 
 [ext_resource type="Texture2D" uid="uid://c18hc6xkqu6fh" path="res://Assets/tank/blue/body/0001.png" id="1_hxvm6"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_lsrh3"]
@@ -56,7 +56,6 @@ texture = ExtResource("3_qgb6k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.68497, 1.44106)
 shape = SubResource("RectangleShape2D_5xtvh")
-disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

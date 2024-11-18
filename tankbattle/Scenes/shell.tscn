@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dlq51iicpjvtg"]
+[gd_scene load_steps=15 format=3 uid="uid://b4c2mpua6f104"]
 
 [ext_resource type="Script" path="res://Scripts/shell.gd" id="1_xf3mg"]
 [ext_resource type="Texture2D" uid="uid://deg80h3e0a0k2" path="res://Assets/shell/0050.png" id="2_5cht0"]
@@ -63,6 +63,7 @@ script = ExtResource("1_xf3mg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-25, 0)
 shape = SubResource("RectangleShape2D_r440d")
+disabled = true
 
 [node name="Life" type="Timer" parent="."]
 wait_time = 10.0
