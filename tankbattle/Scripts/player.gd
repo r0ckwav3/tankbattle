@@ -15,7 +15,7 @@ func _physics_process(delta):
 	$turret.rotate(PI)
 	update_velocity()
 	if (Input.is_action_pressed("shoot")) and not shot_cooldown:
-		shoot()	
+		shoot()
 
 func update_velocity():
 	movement_axis.x = int(Input.is_action_pressed("move_forward")) - int(Input.is_action_pressed("move_backward"))
@@ -29,7 +29,6 @@ func update_velocity():
 		$body.stop()
 
 	velocity = Vector2.from_angle(movement_axis.y) * movement_axis.x * MOVE_SPEED
-	velocity
 
 	move_and_slide()
 	rotate(delta_rotation)
